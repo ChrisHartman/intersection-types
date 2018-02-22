@@ -3,16 +3,12 @@
 (define-type Num^String (Intersection Number String))
 (define-type NumuString (Union Number String))
 
-(: add^ (-> Num^String Number))
-(define (add^ x)
+(: f1 (-> ? Number))
+(define (f1 x)
   (+ x x))
 
-(: union-example (-> NumuString Number))
-(define (union-example x)
+(: f2 (-> ? Number))
+(define (f2 x)
   (if (number? x)
       (+ x x)
-      ;     ^ Hover here
       (string-length x)))
-
-(union-example 5)
-(union-example "Chris")
